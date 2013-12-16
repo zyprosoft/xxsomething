@@ -269,6 +269,14 @@
 		E48E43FF185F384A005705F9 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48E43FE185F384A005705F9 /* ImageIO.framework */; };
 		E48E4401185F385D005705F9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48E4400185F385D005705F9 /* MapKit.framework */; };
 		E48E4403185F3864005705F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48E4402185F3864005705F9 /* QuartzCore.framework */; };
+		E48E4406185F3AA8005705F9 /* XXCacheCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E4405185F3AA8005705F9 /* XXCacheCenter.m */; };
+		E48E4409185F3AC5005705F9 /* XXSharePostCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E4408185F3AC5005705F9 /* XXSharePostCenter.m */; };
+		E48E440C185F3AE6005705F9 /* XXMainDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E440B185F3AE6005705F9 /* XXMainDataCenter.m */; };
+		E48E440F185F3AFB005705F9 /* XXUserDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E440E185F3AFB005705F9 /* XXUserDataCenter.m */; };
+		E48E4412185F3B13005705F9 /* ServiceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E4411185F3B13005705F9 /* ServiceTest.m */; };
+		E48E4415185F3B26005705F9 /* XXUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E4414185F3B26005705F9 /* XXUserModel.m */; };
+		E48E4419185F3B60005705F9 /* XXImageCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E4418185F3B60005705F9 /* XXImageCenter.m */; };
+		E48E441D185F3B8F005705F9 /* XXChatCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48E441C185F3B8F005705F9 /* XXChatCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -764,6 +772,22 @@
 		E48E43FE185F384A005705F9 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E48E4400185F385D005705F9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E48E4402185F3864005705F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E48E4404185F3AA8005705F9 /* XXCacheCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXCacheCenter.h; sourceTree = "<group>"; };
+		E48E4405185F3AA8005705F9 /* XXCacheCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXCacheCenter.m; sourceTree = "<group>"; };
+		E48E4407185F3AC5005705F9 /* XXSharePostCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXSharePostCenter.h; sourceTree = "<group>"; };
+		E48E4408185F3AC5005705F9 /* XXSharePostCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXSharePostCenter.m; sourceTree = "<group>"; };
+		E48E440A185F3AE6005705F9 /* XXMainDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXMainDataCenter.h; sourceTree = "<group>"; };
+		E48E440B185F3AE6005705F9 /* XXMainDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXMainDataCenter.m; sourceTree = "<group>"; };
+		E48E440D185F3AFB005705F9 /* XXUserDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXUserDataCenter.h; sourceTree = "<group>"; };
+		E48E440E185F3AFB005705F9 /* XXUserDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXUserDataCenter.m; sourceTree = "<group>"; };
+		E48E4410185F3B13005705F9 /* ServiceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTest.h; sourceTree = "<group>"; };
+		E48E4411185F3B13005705F9 /* ServiceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceTest.m; sourceTree = "<group>"; };
+		E48E4413185F3B26005705F9 /* XXUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXUserModel.h; sourceTree = "<group>"; };
+		E48E4414185F3B26005705F9 /* XXUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXUserModel.m; sourceTree = "<group>"; };
+		E48E4417185F3B60005705F9 /* XXImageCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXImageCenter.h; sourceTree = "<group>"; };
+		E48E4418185F3B60005705F9 /* XXImageCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXImageCenter.m; sourceTree = "<group>"; };
+		E48E441B185F3B8F005705F9 /* XXChatCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXChatCenter.h; sourceTree = "<group>"; };
+		E48E441C185F3B8F005705F9 /* XXChatCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXChatCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -869,6 +893,8 @@
 		E48E40DE185F37BD005705F9 /* MainService */ = {
 			isa = PBXGroup;
 			children = (
+				E48E441A185F3B80005705F9 /* ChatCenter */,
+				E48E4416185F3B50005705F9 /* ImageCenter */,
 				E48E40DF185F37BD005705F9 /* CacheCenter */,
 				E48E40E0185F37BD005705F9 /* DataCenter */,
 				E48E40E1185F37BD005705F9 /* Model */,
@@ -882,6 +908,8 @@
 		E48E40DF185F37BD005705F9 /* CacheCenter */ = {
 			isa = PBXGroup;
 			children = (
+				E48E4404185F3AA8005705F9 /* XXCacheCenter.h */,
+				E48E4405185F3AA8005705F9 /* XXCacheCenter.m */,
 			);
 			path = CacheCenter;
 			sourceTree = "<group>";
@@ -889,6 +917,10 @@
 		E48E40E0185F37BD005705F9 /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
+				E48E4407185F3AC5005705F9 /* XXSharePostCenter.h */,
+				E48E4408185F3AC5005705F9 /* XXSharePostCenter.m */,
+				E48E440A185F3AE6005705F9 /* XXMainDataCenter.h */,
+				E48E440B185F3AE6005705F9 /* XXMainDataCenter.m */,
 			);
 			path = DataCenter;
 			sourceTree = "<group>";
@@ -896,6 +928,8 @@
 		E48E40E1185F37BD005705F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E48E4413185F3B26005705F9 /* XXUserModel.h */,
+				E48E4414185F3B26005705F9 /* XXUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -903,6 +937,8 @@
 		E48E40E2185F37BD005705F9 /* ServiceTest */ = {
 			isa = PBXGroup;
 			children = (
+				E48E4410185F3B13005705F9 /* ServiceTest.h */,
+				E48E4411185F3B13005705F9 /* ServiceTest.m */,
 			);
 			path = ServiceTest;
 			sourceTree = "<group>";
@@ -910,6 +946,8 @@
 		E48E40E3185F37BD005705F9 /* UserCenter */ = {
 			isa = PBXGroup;
 			children = (
+				E48E440D185F3AFB005705F9 /* XXUserDataCenter.h */,
+				E48E440E185F3AFB005705F9 /* XXUserDataCenter.m */,
 			);
 			path = UserCenter;
 			sourceTree = "<group>";
@@ -1734,6 +1772,24 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		E48E4416185F3B50005705F9 /* ImageCenter */ = {
+			isa = PBXGroup;
+			children = (
+				E48E4417185F3B60005705F9 /* XXImageCenter.h */,
+				E48E4418185F3B60005705F9 /* XXImageCenter.m */,
+			);
+			path = ImageCenter;
+			sourceTree = "<group>";
+		};
+		E48E441A185F3B80005705F9 /* ChatCenter */ = {
+			isa = PBXGroup;
+			children = (
+				E48E441B185F3B8F005705F9 /* XXChatCenter.h */,
+				E48E441C185F3B8F005705F9 /* XXChatCenter.m */,
+			);
+			path = ChatCenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2047,6 +2103,14 @@
 				E48E43F1185F37BE005705F9 /* UIImage+MultiFormat.m in Sources */,
 				E48E43F2185F37BE005705F9 /* UIImage+WebP.m in Sources */,
 				E48E43F3185F37BE005705F9 /* UIImageView+WebCache.m in Sources */,
+				E48E4406185F3AA8005705F9 /* XXCacheCenter.m in Sources */,
+				E48E4409185F3AC5005705F9 /* XXSharePostCenter.m in Sources */,
+				E48E440C185F3AE6005705F9 /* XXMainDataCenter.m in Sources */,
+				E48E440F185F3AFB005705F9 /* XXUserDataCenter.m in Sources */,
+				E48E4412185F3B13005705F9 /* ServiceTest.m in Sources */,
+				E48E4415185F3B26005705F9 /* XXUserModel.m in Sources */,
+				E48E4419185F3B60005705F9 /* XXImageCenter.m in Sources */,
+				E48E441D185F3B8F005705F9 /* XXChatCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
