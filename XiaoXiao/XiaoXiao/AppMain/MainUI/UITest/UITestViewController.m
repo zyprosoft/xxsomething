@@ -7,7 +7,6 @@
 //
 
 #import "UITestViewController.h"
-#import "DTCoreText.h"
 
 @interface UITestViewController ()
 
@@ -28,6 +27,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    DTAttributedTextContentView *contentView = [[DTAttributedTextContentView alloc]init];
+    contentView.frame = CGRectMake(0, 0,self.view.frame.size.width,self.view.frame.size.height);
+    [self.view addSubview:contentView];
+
+    NSData *htmlData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"xxshare_image_text_0" ofType:@"html"]];
+    NSAttributedString *htmlString = [[NSAttributedString alloc]initWithHTMLData:htmlData documentAttributes:nil];
+        
+    [contentView setAttributedString:htmlString];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [XXSimpleAudio playRefreshEffect];
+    });
+    
 }
 
 - (void)didReceiveMemoryWarning

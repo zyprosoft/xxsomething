@@ -10,4 +10,14 @@
 
 @interface XXSharePostStyle : NSObject
 
+- (CGFloat)sharePostBodyLineSpace;
+- (CGFloat)sharePostBodyFontSize;
+- (NSString*)sharePostFontName;
+- (NSString*)sharePostFontColor;
+- (CGFloat)sharePostLeftMargin;
+
+- (CGFloat)sharePostCellContentTopMargin;
+- (CGFloat)sharePostCellLeftMargin;
+
+
 @end

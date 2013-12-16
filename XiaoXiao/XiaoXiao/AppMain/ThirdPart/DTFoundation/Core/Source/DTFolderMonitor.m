@@ -57,7 +57,6 @@
 #if OS_OBJECT_USE_OBJC
 //	dispatch_release(_queue);
 #endif
-    
 }
 
 - (void)startMonitoring

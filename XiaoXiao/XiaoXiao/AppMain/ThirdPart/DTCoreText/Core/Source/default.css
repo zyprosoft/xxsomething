@@ -32,7 +32,6 @@ body
 {
 	/* safari has a 8 px margin here */
 	display:block;
-    line-height:30px;
 }
 
 article,aside,footer,header,hgroup,nav,section
@@ -112,11 +111,6 @@ center
 {
 	text-align:center;
 	display:block;
-}
-
-zy
-{
-    line-height:30px;
 }
 
 strong,b

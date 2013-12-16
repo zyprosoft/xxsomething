@@ -12,6 +12,7 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
+#import "ThirdPartSupport.h"
 #import "XXUIGlobalConst.h"
 #import "XXServiceGlobalConst.h"
 

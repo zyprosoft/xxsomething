@@ -7,15 +7,32 @@
 //
 
 #import "XiaoXiaoAppDelegate.h"
+#import "UITestViewController.h"
 
 @implementation XiaoXiaoAppDelegate
+
+#pragma mark DDLogConfig
+- (void)configDDLogSettings
+{
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    //config DDLog
+    [self configDDLogSettings];
+    
+    //testUI
+    UITestViewController *testVC = [[UITestViewController alloc]init];
+    self.window.rootViewController = testVC;
+    
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
