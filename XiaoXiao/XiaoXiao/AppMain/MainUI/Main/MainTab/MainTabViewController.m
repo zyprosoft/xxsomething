@@ -28,6 +28,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    //custom tab bar
+    [self initCustomTabBar];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,8 +56,6 @@
     customTabBar = [[XXCustomTabBar alloc]initWithFrame:self.tabBar.frame withConfigArray:tabBarConfigArray];
     [self.tabBar addSubview:customTabBar];
     //set select action
-    
-    WeakObj(self);
     [customTabBar setTabBarDidSelectAtIndexBlock:^(NSInteger index) {
         
     }];

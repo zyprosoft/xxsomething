@@ -8,6 +8,7 @@
 
 #import "XiaoXiaoAppDelegate.h"
 #import "UITestViewController.h"
+#import "MainTabViewController.h"
 
 @implementation XiaoXiaoAppDelegate
 
@@ -28,8 +29,12 @@
     [self configDDLogSettings];
     
     //testUI
-    UITestViewController *testVC = [[UITestViewController alloc]init];
-    self.window.rootViewController = testVC;
+//    UITestViewController *testVC = [[UITestViewController alloc]init];
+//    self.window.rootViewController = testVC;
+    
+    //MainUI
+    MainTabViewController *mainTabVC = [[MainTabViewController alloc]init];
+    self.window.rootViewController = mainTabVC;
     
     [self.window makeKeyAndVisible];
     
