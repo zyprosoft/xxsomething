@@ -1,0 +1,13 @@
+
+
+
+p{
+  font-size:%dpx;
+  line-height:%d;
+}
+
+img.emoji{
+    width:%dpx;
+    height:%dpx;
+    border:0;
+}

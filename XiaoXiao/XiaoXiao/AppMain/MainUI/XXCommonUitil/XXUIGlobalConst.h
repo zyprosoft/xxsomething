@@ -6,6 +6,11 @@
 //  Copyright (c) 2013年 ZYProSoft. All rights reserved.
 //
 
+//common uitil
+#import "XXCommonUitil.h"
+#import "XXFileUitil.h"
+#import "XXFileSourceConfig.h"
+
 //Share
 #import "XXShareBaseCell.h"
 #import "XXShareTextView.h"

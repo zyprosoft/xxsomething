@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BFF10EC1860277900D35A72 /* xx_base_text_template.css in Resources */ = {isa = PBXBuildFile; fileRef = 3BFF10EB1860277900D35A72 /* xx_base_text_template.css */; };
+		3BFF10EF1860282F00D35A72 /* XXFileUitil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF10EE1860282F00D35A72 /* XXFileUitil.m */; };
+		3BFF10F218602BA900D35A72 /* XXFileSourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFF10F118602BA800D35A72 /* XXFileSourceConfig.m */; };
 		E48E40BE185F3758005705F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48E40BD185F3758005705F9 /* UIKit.framework */; };
 		E48E40C0185F3758005705F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48E40BF185F3758005705F9 /* Foundation.framework */; };
 		E48E40C2185F3758005705F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E48E40C1185F3758005705F9 /* CoreGraphics.framework */; };
@@ -374,6 +377,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BFF10EB1860277900D35A72 /* xx_base_text_template.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xx_base_text_template.css; sourceTree = "<group>"; };
+		3BFF10ED1860282F00D35A72 /* XXFileUitil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXFileUitil.h; sourceTree = "<group>"; };
+		3BFF10EE1860282F00D35A72 /* XXFileUitil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXFileUitil.m; sourceTree = "<group>"; };
+		3BFF10F018602BA800D35A72 /* XXFileSourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXFileSourceConfig.h; sourceTree = "<group>"; };
+		3BFF10F118602BA800D35A72 /* XXFileSourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXFileSourceConfig.m; sourceTree = "<group>"; };
 		E48E40BA185F3758005705F9 /* XiaoXiao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoXiao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48E40BD185F3758005705F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E48E40BF185F3758005705F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1265,6 +1273,7 @@
 				E48E4128185F37BD005705F9 /* XXStatusHUD.m */,
 				E48E44C2185F4112005705F9 /* XXEmojiChooseView.h */,
 				E48E44C3185F4114005705F9 /* XXEmojiChooseView.m */,
+				3BFF10EB1860277900D35A72 /* xx_base_text_template.css */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -1532,6 +1541,10 @@
 				E48E41BD185F37BD005705F9 /* XXCommonUitil.h */,
 				E48E41BE185F37BD005705F9 /* XXCommonUitil.m */,
 				E48E41BF185F37BD005705F9 /* XXUIGlobalConst.h */,
+				3BFF10ED1860282F00D35A72 /* XXFileUitil.h */,
+				3BFF10EE1860282F00D35A72 /* XXFileUitil.m */,
+				3BFF10F018602BA800D35A72 /* XXFileSourceConfig.h */,
+				3BFF10F118602BA800D35A72 /* XXFileSourceConfig.m */,
 			);
 			path = XXCommonUitil;
 			sourceTree = "<group>";
@@ -2283,6 +2296,7 @@
 				E48E47FB185F6516005705F9 /* LICENSE in Resources */,
 				E48E47FC185F6516005705F9 /* readme.markdown in Resources */,
 				E48E4864185F6D64005705F9 /* refreshaudio.amr in Resources */,
+				3BFF10EC1860277900D35A72 /* xx_base_text_template.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2531,6 +2545,8 @@
 				E48E4802185F660D005705F9 /* XXCustomTabBar.m in Sources */,
 				E48E4894185F706C005705F9 /* MCSoundBoard.m in Sources */,
 				E48E4899185F7120005705F9 /* XXSimpleAudio.m in Sources */,
+				3BFF10EF1860282F00D35A72 /* XXFileUitil.m in Sources */,
+				3BFF10F218602BA900D35A72 /* XXFileSourceConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
