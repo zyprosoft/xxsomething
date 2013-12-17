@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXCustomTabBar.h"
 
-@interface MainTabViewController : UIViewController
-
+@interface MainTabViewController : UITabBarController
+{
+    XXCustomTabBar *customTabBar;
+}
 @end

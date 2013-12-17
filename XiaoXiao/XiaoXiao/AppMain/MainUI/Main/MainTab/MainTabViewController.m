@@ -27,12 +27,37 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 初始化TabBar
+- (void)initCustomTabBar
+{
+    NSMutableArray *tabBarConfigArray = [NSMutableArray array];
+    for (int i=0; i<3; i++) {
+        
+        NSString *iconNormal = @"normal";
+        NSString *iconSelected = @"selected";
+        NSString *title = @"test";
+        
+        NSDictionary *itemDict = @{XXBarItemNormalIconKey:iconNormal,XXBarItemSelectIconKey:iconSelected,XXBarItemTitleKey:title};
+        [tabBarConfigArray addObject:itemDict];
+    }
+    
+    customTabBar = [[XXCustomTabBar alloc]initWithFrame:self.tabBar.frame withConfigArray:tabBarConfigArray];
+    [self.tabBar addSubview:customTabBar];
+    //set select action
+    
+    WeakObj(self);
+    [customTabBar setTabBarDidSelectAtIndexBlock:^(NSInteger index) {
+        
+    }];
 }
 
 @end
