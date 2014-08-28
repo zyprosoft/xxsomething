@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXBaseViewController.h"
+#import "XXShareDetailViewController.h"
 
-@interface XXCommentViewController : UIViewController
+/*
+ *基础评论列表
+ */
+
+@interface XXCommentViewController : XXShareDetailViewController
+{
+    XXCommentModel *_originComment;
+    BOOL            _isGetDetailSuccess;
+}
+- (id)initWithSharePost:(XXSharePostModel *)aSharePost withOriginComment:(XXCommentModel*)aComment;
 
 @end

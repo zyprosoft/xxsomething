@@ -7,6 +7,8 @@
 //
 
 #import "OtherUserTeaseSelectViewController.h"
+#import "OtherTeaseCell.h"
+#import "OtherUserSendTeaseViewController.h"
 
 @interface OtherUserTeaseSelectViewController ()
 
@@ -27,12 +29,81 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = @"表情选择";
+    [XXCommonUitil setCommonNavigationReturnItemForViewController:self];
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    
+    CGFloat totoalHeight = XXNavContentHeight -44-49;
+    
+    _teaseImagesArray = [[NSMutableArray alloc]init];
+    NSMutableArray *itemArray = [NSMutableArray array];
+    for (int i=1; i<52;i++) {
+        
+        [itemArray addObject:[NSString stringWithFormat:@"%d",i]];
+        if (itemArray.count==3) {
+            NSMutableArray *rowData = [NSMutableArray array];
+            [rowData addObjectsFromArray:itemArray];
+            [_teaseImagesArray addObject:rowData];
+            [itemArray removeAllObjects];
+        }
+    }
+    
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,0,self.view.frame.size.width,totoalHeight) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_tableView];
+
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - tableView Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _teaseImagesArray.count;
+}
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"CellIdentifier";
+    OtherTeaseCell *cell = (OtherTeaseCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[OtherTeaseCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.backgroundColor = [UIColor clearColor];
+        [cell setTeaseSelectBlock:^(OtherTeaseCell *tapCell, NSInteger selectIndex) {
+            NSIndexPath *selectPath = [tableView indexPathForCell:tapCell];
+            [self teaseSelectDidSelectTease:selectPath.row withSelectIndex:selectIndex];
+        }];
+    }
+    [cell setTeaseImages:[_teaseImagesArray objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 110;
+}
+
+//config select tease
+- (void)teaseSelectDidSelectTease:(NSInteger)rowIndex withSelectIndex:(NSInteger)selectIndex
+{
+    OtherUserSendTeaseViewController *sendVC = [[OtherUserSendTeaseViewController alloc]init];
+    sendVC.title = @"发送挑逗";
+    sendVC.teaseEmoji = [[_teaseImagesArray objectAtIndex:rowIndex]objectAtIndex:selectIndex];
+    sendVC.toUserId = self.selectUser;
+    [self.navigationController pushViewController:sendVC animated:YES];
+    
 }
 
 @end

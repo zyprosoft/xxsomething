@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OtherUserTeaseSelectViewController : UIViewController
+@interface OtherUserTeaseSelectViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+{
+    NSMutableArray *_teaseImagesArray;
+    UITableView *_tableView;
+}
+@property (nonatomic,strong)NSString *selectUser;
 
 @end

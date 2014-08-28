@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXBaseViewController.h"
+#import "XXUserInfoBaseCell.h"
 
-@interface XXBaseUserListViewController : UIViewController
+/*
+ *通用用户列表
+ */
+
+@interface XXBaseUserListViewController : XXBaseViewController<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate,XXUserInfoBaseCellDelegate>
+{
+    UITableView *_userListTable;
+    UIRefreshControl *_refreshControl;
+    NSMutableArray *_userListArray;
+    NSInteger   _currentPageIndex;
+    NSInteger   _pageSize;
+    BOOL        _hiddenLoadMore;
+    BOOL        _isRefresh;
+    
+}
+
+- (void)refresh;
+- (void)requestUserList;
+- (void)loadMoreResult;
+- (void)finishRequestWithResultArray:(NSArray*)resultArray;
 
 @end

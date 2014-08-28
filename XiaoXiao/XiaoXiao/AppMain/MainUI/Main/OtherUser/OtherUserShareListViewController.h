@@ -9,5 +9,5 @@
 #import "XXShareListViewController.h"
 
 @interface OtherUserShareListViewController : XXShareListViewController
-
+@property (nonatomic,strong)NSString *otherUserId;
 @end

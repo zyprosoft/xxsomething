@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingMyProfileGuideViewController : UIViewController
+typedef void (^SettingMyProfileGuideViewControllerFinishBlock) (BOOL resultState);
+
+@interface SettingMyProfileGuideViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView    *_tableView;
+    NSMutableArray *_titleArray;
+    XXUserModel    *_updateModel;
+    
+    SettingMyProfileGuideViewControllerFinishBlock _finishBlock;
+}
+- (void)setFinishBlock:(SettingMyProfileGuideViewControllerFinishBlock)finishBlock;
 
 @end

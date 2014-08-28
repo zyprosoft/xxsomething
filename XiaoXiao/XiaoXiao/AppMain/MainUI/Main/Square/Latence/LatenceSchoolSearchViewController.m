@@ -27,6 +27,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [XXCommonUitil setCommonNavigationNextStepItemForViewController:self withNextStepAction:^{
+        
+        
+        
+    } withTitle:@"潜伏"];
+    
+    [self setNextStepAction:^(NSDictionary *resultDict) {
+        
+    }];
+    [self setFinishChooseSchool:^(XXSchoolModel *chooseSchool) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning

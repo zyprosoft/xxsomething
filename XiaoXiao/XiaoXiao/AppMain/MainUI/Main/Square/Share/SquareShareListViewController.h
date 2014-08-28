@@ -9,5 +9,9 @@
 #import "XXShareListViewController.h"
 
 @interface SquareShareListViewController : XXShareListViewController
-
+{
+    XXCustomButton *_textShareButton;
+    XXCustomButton *_aduioShareBtton;
+    XXCustomButton *_imageShareButton;
+}
 @end

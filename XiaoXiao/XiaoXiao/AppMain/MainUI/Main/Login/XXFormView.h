@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XXFormView : UIView
+@interface XXFormView : UIView<UITextFieldDelegate>
+{
+    
+    UIImageView *backgroundAccount;
+    UIImageView *backgroundPwd;
+}
+@property (nonatomic,strong)UITextField *accountTextField;
+@property (nonatomic,strong)UITextField *passwordTextField;
 
 @end

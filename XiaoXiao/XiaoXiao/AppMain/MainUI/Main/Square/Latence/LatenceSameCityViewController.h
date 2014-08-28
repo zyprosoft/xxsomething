@@ -8,6 +8,17 @@
 
 #import "XXSchoolListViewController.h"
 
-@interface LatenceSameCityViewController : XXSchoolListViewController
+@interface LatenceSameCityViewController : XXSchoolSearchViewController
+{
+    NSString *_currentUserCity;
+    NSIndexPath *_selectedIndexPath;
+    
+    XXCustomTabBar *_menuBar;
+    UIImageView    *_selectTagView;
+    NSInteger _currentSearchType;
+}
+@property (nonatomic,assign) NSInteger currentSearchType;
+@property (nonatomic,strong) NSIndexPath *selectedIndexPath;
+
 
 @end

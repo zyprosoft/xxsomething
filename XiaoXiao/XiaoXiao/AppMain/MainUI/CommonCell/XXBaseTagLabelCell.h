@@ -9,5 +9,12 @@
 #import "XXBaseCell.h"
 
 @interface XXBaseTagLabelCell : XXBaseCell
+{
+    UILabel *_tagLabel;
+    UITextField *_inputTextField;
+}
+@property (nonatomic,strong)UITextField *inputTextField;
 
+- (void)setTagName:(NSString*)tagName;
+- (void)setContentText:(NSString*)contentText;
 @end

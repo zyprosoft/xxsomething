@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingGuideViewController : UIViewController
+@interface SettingGuideViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+{
+    NSMutableArray *_titleArray;
+    UITableView    *_tableView;
+}
 
 @end

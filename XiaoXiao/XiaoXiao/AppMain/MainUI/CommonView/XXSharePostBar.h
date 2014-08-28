@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface XXSharePostBar : UIView
-
+{
+    UITextView  *_inputTextView;
+    UIButton    *_emojiButton;
+    
+}
 @end

@@ -7,7 +7,14 @@
 //
 
 #import "XXBaseUserListViewController.h"
+#import "InSchoolUserFilterViewController.h"
 
-@interface InSchoolSearchUserListViewController : XXBaseUserListViewController
-
+@interface InSchoolSearchUserListViewController : XXBaseUserListViewController<InSchoolUserFilterViewControllerDelegate>
+{
+    UIControl *blackBoardView;
+    XXSearchBar *searchBar;
+    NSString *keyword;
+    UILabel  *_currentSchoolLabel;
+    XXConditionModel *condition;
+}
 @end

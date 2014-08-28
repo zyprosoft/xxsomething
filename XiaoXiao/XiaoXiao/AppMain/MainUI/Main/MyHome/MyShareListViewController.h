@@ -7,7 +7,10 @@
 //
 
 #import "XXShareListViewController.h"
+#import "SharePostGuideViewController.h"
 
-@interface MyShareListViewController : XXShareListViewController
-
+@interface MyShareListViewController : XXShareListViewController<UIAlertViewDelegate,SharePostGuideViewControllerDelegate>
+{
+    NSIndexPath *_tapPath;
+}
 @end

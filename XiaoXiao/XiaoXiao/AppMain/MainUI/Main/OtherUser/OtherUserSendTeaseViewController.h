@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXBaseViewController.h"
 
-@interface OtherUserSendTeaseViewController : UIViewController
+@interface OtherUserSendTeaseViewController : XXBaseViewController
+{
+    UIImageView *_teaseImageView;
+    XXCustomButton *_teaseButton;
+    NSString    *_toUserId;
+}
+@property (nonatomic,strong)NSString *teaseEmoji;
+@property (nonatomic,strong)NSString *toUserId;
+
+- (void)setSelecteTeaseEmoji:(NSString*)teaseName toUser:(NSString*)useId;
 
 @end

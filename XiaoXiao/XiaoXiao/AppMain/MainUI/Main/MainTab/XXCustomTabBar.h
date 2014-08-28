@@ -11,8 +11,10 @@
 #define XXBarItemNormalIconKey @"XXBarItemNormalIconKey"
 #define XXBarItemSelectIconKey @"XXBarItemSelectIconKey"
 #define XXBarItemTitleKey @"XXBarItemTitleKey"
+#define XXBarItemTitleNormalColorKey @"XXBarItemTitleNormalColorKey"
+#define XXBarItemTitleSelectColorKey @"XXBarItemTitleSelectColorKey"
 
-//configArray  @{XXBarItemNormalIconKey:xxx.png,XXBarItemSelectIconKey:xxx.png,XXBarItemTitleKey:xxx}
+//configArray  @{XXBarItemNormalIconKey:xxx.png,XXBarItemSelectIconKey:xxx.png,XXBarItemTitleKey:xxx,XXBarItemTitleNormalColorKey:@"",XXBarItemTitleSelectColorKey:@""}
 
 typedef void (^XXCustomTabBarDidSelectIndexBlock) (NSInteger index);
 
@@ -25,5 +27,7 @@ typedef void (^XXCustomTabBarDidSelectIndexBlock) (NSInteger index);
 - (id)initWithFrame:(CGRect)frame withConfigArray:(NSArray*)configArray;
 
 - (void)setTabBarDidSelectAtIndexBlock:(XXCustomTabBarDidSelectIndexBlock)selectBlock;
+
+- (void)setSelectAtIndex:(NSInteger)index;
 
 @end

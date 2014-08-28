@@ -8,6 +8,15 @@
 
 #import "XXBaseUserListViewController.h"
 
+@protocol LonelyShootResultListViewControllerDelegate <NSObject>
+- (void)shootFinishWithResult:(BOOL)result;
+@end
+
 @interface LonelyShootResultListViewController : XXBaseUserListViewController
+{
+    
+}
+@property (nonatomic,weak)id<LonelyShootResultListViewControllerDelegate> delegate;
+
 
 @end

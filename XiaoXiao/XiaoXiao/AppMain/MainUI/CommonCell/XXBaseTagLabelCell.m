@@ -10,11 +10,24 @@
 
 @implementation XXBaseTagLabelCell
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+        _tagLabel = [[UILabel alloc]init];
+        _tagLabel.frame = CGRectMake(25,7,40,30);
+        _tagLabel.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:_tagLabel];
+        _tagLabel.textAlignment = NSTextAlignmentRight;
+        _tagLabel.textColor = [UIColor blackColor];
+        
+        _inputTextField = [[UITextField alloc]init];
+        _inputTextField.frame = CGRectMake(75,5,150,34);
+        _inputTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        [self.contentView addSubview:_inputTextField];
+        _inputTextField.enabled = NO;
+        _inputTextField.placeholder = @"请输入";
     }
     return self;
 }
@@ -27,5 +40,13 @@
     // Drawing code
 }
 */
+- (void)setTagName:(NSString *)tagName
+{
+    _tagLabel.text = [NSString stringWithFormat:@"%@:",tagName];
+}
+- (void)setContentText:(NSString *)contentText
+{
+    _inputTextField.text = contentText;
+}
 
 @end

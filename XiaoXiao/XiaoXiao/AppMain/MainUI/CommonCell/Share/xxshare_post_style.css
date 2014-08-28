@@ -1,16 +1,28 @@
-
-content{
-    margin-bottom: 0;
-    font:14pt Helvetica;
+p.content{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
 }
 
 img.emoji{
-    width:18px;
-    height:18px;
+    width:%dpx;
+    height:%dpx;
+    border:0;
 }
 
-img.thumbs {
-    width: 85px;
-    height: 85px;
+img.thumbs{
+    width:%dpx;
+    height:%dpx;
     position:relative;
+}
+
+img.audio{
+
+    width:%dpx;
+    height:%dpx;
+    position:relative;
+    
 }

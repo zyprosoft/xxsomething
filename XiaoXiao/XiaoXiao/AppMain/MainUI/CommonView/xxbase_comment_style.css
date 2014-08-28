@@ -1,0 +1,14 @@
+p.content{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
+}
+
+img.emoji{
+    width:%dpx;
+    height:%dpx;
+    border:0;
+}

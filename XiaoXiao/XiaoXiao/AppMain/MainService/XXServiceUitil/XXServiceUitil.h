@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+// Log levels: off, error, warn, info, verbose
+#if DEBUG
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
-
-#define WeakObj(x) __weak typeof(x) weakSelf = x;
+#else
+static const int ddLogLevel = LOG_LEVEL_OFF;
+#endif
 
 @interface XXServiceUitil : NSObject
 

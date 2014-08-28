@@ -14,4 +14,14 @@
 
 + (void)playTeaseSendEffect;
 
++ (void)playPullShootEffect;
+
++ (void)playShootNowEffect;
+
++ (void)playMsgSendEffect;
+
++ (void)playShootFindEffect;
+
++ (void)playShootNoneEffect;
+
 @end

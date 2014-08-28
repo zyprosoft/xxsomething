@@ -7,7 +7,22 @@
 //
 
 #import "XXUserFilterViewController.h"
+#import "XXSegmentControl.h"
 
+@protocol InSchoolUserFilterViewControllerDelegate <NSObject>
+
+- (void)inSchoolUserFilterViewControllerDidFinishChooseCondition:(XXConditionModel*)aCondition;
+
+@end
 @interface InSchoolUserFilterViewController : XXUserFilterViewController
+{
+    UIScrollView *_backScrollView;
+    XXSegmentControl *segBoyGire;
+    XXSegmentControl *schoolRoll;
+    XXSegmentControl *AboutKnow;
+    
+    NSIndexPath *selectPath;
+}
+@property (nonatomic,weak)id<InSchoolUserFilterViewControllerDelegate> delegate;
 
 @end

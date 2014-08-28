@@ -7,27 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXShareStyle.h"
 
-extern NSString *const XXEmojiCSSFormate;
-extern NSString *const XXEmojiTagFormate;
-
-@interface XXBaseTextView : UIView<DTAttributedTextContentViewDelegate,DTLazyImageViewDelegate>
+@interface XXBaseTextView : DTAttributedTextContentView
 {
-    DTAttributedTextContentView *contentAttributedView;
 }
-@property (nonatomic,assign)NSInteger fontSize;
-@property (nonatomic,assign)NSInteger lineHeight;
-@property (nonatomic,assign)NSInteger emojiSize;
 
-- (void)setAttributedText:(NSAttributedString*)attributedText;
++ (NSAttributedString*)formatteCommonTextToAttributedText:(NSString*)contentText;
+
++ (NSAttributedString*)formatteCommonTextToAttributedText:(NSString*)contentText isFromSelf:(BOOL)isFromSelf;
+
++ (NSAttributedString*)formatteTextToAttributedText:(NSString*)contentText withHtmlTemplateFile:(NSString*)htmlTemplate withCSSTemplate:(NSString*)cssTemplate withShareStyle:(XXShareStyle*)aStyle;
 
 - (void)setText:(NSString*)text;
 
+- (void)setText:(NSString*)text withShareStyle:(XXShareStyle*)aStyle;
+
 //限定宽度内所需最大高度
 + (CGFloat)heightForAttributedText:(NSAttributedString*)attributedText forWidth:(CGFloat)width;
-
-//限定高度内所需最大宽度
-+ (CGFloat)widthForAttributedText:(NSAttributedString*)attributedText forHeight:(CGFloat)height;
++ (CGSize)sizeForAttributedText:(NSAttributedString*)attributedText forWidth:(CGFloat)width;
 
 + (NSString*)emojiTextToImageName:(NSString*)emojiText;
 + (NSString*)switchEmojiTextWithSourceText:(NSString*)source;

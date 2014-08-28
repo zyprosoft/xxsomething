@@ -8,6 +8,8 @@
 
 #import "XXSchoolListViewController.h"
 
-@interface LatenceHistoryViewController : XXSchoolListViewController
-
+@interface LatenceHistoryViewController : XXSchoolSearchViewController
+{
+    NSIndexPath *_selectedIndexPath;
+}
 @end

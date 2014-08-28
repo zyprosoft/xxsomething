@@ -9,5 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface XXLoadMoreView : UIView
+{
+    UIActivityIndicatorView *_indicatorView;
+    UILabel                 *_titleLabel;
+}
+@property (nonatomic,strong)UIImageView  *backgroundImageView;
+@property (nonatomic,strong)UILabel *titleLabel;
+@property (nonatomic,strong)UIActivityIndicatorView *indicatorView;
+
+
+- (void)startLoading;
+- (void)endLoading;
+- (void)setTitle:(NSString*)title;
+- (void)setLabelModel;
 
 @end

@@ -9,5 +9,5 @@
 #import "XXBaseUserListViewController.h"
 
 @interface OtherUserFansListViewController : XXBaseUserListViewController
-
+@property (nonatomic,strong)NSString *otherUserId;
 @end

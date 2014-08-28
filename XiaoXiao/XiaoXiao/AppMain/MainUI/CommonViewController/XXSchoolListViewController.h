@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+ *通用学校列表
+ */
 @interface XXSchoolListViewController : UIViewController
 
 @end

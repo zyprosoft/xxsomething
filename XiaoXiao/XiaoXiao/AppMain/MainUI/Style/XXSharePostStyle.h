@@ -10,14 +10,20 @@
 
 @interface XXSharePostStyle : NSObject
 
-- (NSInteger)sharePostBodyLineSpace;
-- (NSInteger)sharePostBodyFontSize;
-- (NSString*)sharePostFontName;
-- (NSString*)sharePostFontColor;
-- (NSInteger)sharePostLeftMargin;
-
-- (CGFloat)sharePostCellContentTopMargin;
-- (CGFloat)sharePostCellLeftMargin;
++ (CGFloat)sharePostContentLineHeight;
++ (NSInteger)sharePostContentFontSize;
++ (NSString*)sharePostContentTextColor;
++ (NSString*)sharePostContentTextAlign;
++ (NSString*)sharePostContentFontFamily;
++ (NSString*)sharePostContentFontWeight;
++ (NSInteger)sharePostEmojiSize;
++ (NSInteger)sharePostAudioImageWidth;
++ (NSInteger)sharePostAudioImageHeight;
++ (NSInteger)sharePostSingleThumbLeftMargin;
++ (NSInteger)sharePostTwoThumbLeftMargin;
++ (NSString*)sharePostAudioSrcImageName;
++ (NSString*)sharePostImagesSeprator;
++ (CGFloat)sharePostContentWidth;
 
 
 @end

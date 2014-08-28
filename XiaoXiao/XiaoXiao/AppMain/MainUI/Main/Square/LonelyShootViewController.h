@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ArrowView.h"
+#import "LonelyShootView.h"
+#import "XXLoadMoreView.h"
+#import "XXBaseViewController.h"
+#import "LonelyShootResultListViewController.h"
 
-@interface LonelyShootViewController : UIViewController
-
+@interface LonelyShootViewController :UIViewController<ArrowViewDelegate,LonelyShootResultListViewControllerDelegate,UIAlertViewDelegate>
+{
+    ArrowView       *_arrowView;
+    LonelyShootView *_shootView;
+    LonelyShootResultListViewController *resultVC;
+    
+    UIActivityIndicatorView *_indcatorView;
+    UILabel                 *_loadingLabel;
+    
+}
 @end

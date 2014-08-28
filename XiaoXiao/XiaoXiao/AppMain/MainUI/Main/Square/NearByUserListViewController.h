@@ -7,7 +7,12 @@
 //
 
 #import "XXBaseUserListViewController.h"
+#import "BFLocationManager.h"
 
 @interface NearByUserListViewController : XXBaseUserListViewController
-
+{
+    BFLocationManager *_locationManager;
+    long _latitude;
+    long _longtitude;
+}
 @end

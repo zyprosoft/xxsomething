@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XXUserModel.h"
 
 @interface XXUserDataCenter : NSObject
++ (XXUserModel*)currentLoginUser;
++ (void)loginThisUser:(XXUserModel*)aUser;
++ (void)currentUserLoginOut;
++ (NSString*)currentLoginUserToken;
++ (BOOL)checkLoginUserInfoIsWellDone;
 
 @end

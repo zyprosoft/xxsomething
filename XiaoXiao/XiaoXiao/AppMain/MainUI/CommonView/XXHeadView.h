@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AGMedallionView.h"
+#import "JSBadgeView.h"
 
-@interface XXHeadView : UIView
+#define XXHeadViewWidth 80
+
+@interface XXHeadView : UIControl
+{
+    NSString *_userId;
+    
+}
+@property (nonatomic,strong)AGMedallionView  *contentImageView;
+@property (nonatomic,strong)UIImageView     *roundImageView;
+@property (nonatomic,readonly)NSString *userId;
+
+- (void)setHeadWithUserId:(NSString*)userId;
+- (void)setRoundHeadWithUserId:(NSString*)userId;
 
 @end

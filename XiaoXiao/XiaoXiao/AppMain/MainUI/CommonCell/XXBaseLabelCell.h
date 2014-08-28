@@ -9,5 +9,4 @@
 #import "XXBaseCell.h"
 
 @interface XXBaseLabelCell : XXBaseCell
-
 @end

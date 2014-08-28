@@ -19,11 +19,6 @@ NSString *const XXEmojiTagFormate = @"[]";
     if (self) {
         // Initialization code
         
-        contentAttributedView = [[DTAttributedTextContentView alloc]init];
-        contentAttributedView.frame = CGRectMake(0,0,frame.size.width,frame.size.height);
-        contentAttributedView.delegate = self;
-        [self addSubview:contentAttributedView];
-        
     }
     return self;
 }
@@ -37,114 +32,76 @@ NSString *const XXEmojiTagFormate = @"[]";
 }
 */
 
-#pragma mark - custom DTImageView
-- (UIView*)attributedTextContentView:(DTAttributedTextContentView *)attributedTextContentView viewForAttachment:(DTTextAttachment *)attachment frame:(CGRect)frame
+
+
+#pragma mark - Interface
++ (NSAttributedString*)formatteCommonTextToAttributedText:(NSString *)contentText
 {
-    if ([attachment isKindOfClass:[DTImageTextAttachment class]]) {
-        
-        // if the attachment has a hyperlinkURL then this is currently ignored
-		DTLazyImageView *imageView = [[DTLazyImageView alloc] initWithFrame:frame];
-		imageView.delegate = self;
-		
-		// sets the image if there is one
-		imageView.image = [(DTImageTextAttachment *)attachment image];
-		
-		// url for deferred loading
-		imageView.url = attachment.contentURL;
-		
-		// if there is a hyperlink then add a link button on top of this image
-		if (attachment.hyperLinkURL)
-		{
-			// NOTE: this is a hack, you probably want to use your own image view and touch handling
-			// also, this treats an image with a hyperlink by itself because we don't have the GUID of the link parts
-			imageView.userInteractionEnabled = YES;
-			
-			DTLinkButton *button = [[DTLinkButton alloc] initWithFrame:imageView.bounds];
-			button.URL = attachment.hyperLinkURL;
-			button.minimumHitSize = CGSizeMake(25, 25); // adjusts it's bounds so that button is always large enough
-			button.GUID = attachment.hyperLinkGUID;
-			
-			// use normal push action for opening URL
-			[button addTarget:self action:@selector(linkPushed:) forControlEvents:UIControlEventTouchUpInside];
-			
-			// demonstrate combination with long press
-			UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(linkLongPressed:)];
-			[button addGestureRecognizer:longPress];
-			
-			[imageView addSubview:button];
-		}
-		
-		return imageView;
-        
-    }else{
-        return nil;
-    }
-}
-
-#pragma mark DTLazyImageViewDelegate
-
-- (void)lazyImageView:(DTLazyImageView *)lazyImageView didChangeImageSize:(CGSize)size {
-	NSURL *url = lazyImageView.url;
-	CGSize imageSize = size;
-	
-	NSPredicate *pred = [NSPredicate predicateWithFormat:@"contentURL == %@", url];
-	
-	BOOL didUpdate = NO;
-	
-	// update all attachments that matchin this URL (possibly multiple images with same size)
-	for (DTTextAttachment *oneAttachment in [contentAttributedView.layoutFrame textAttachmentsWithPredicate:pred])
-	{
-		// update attachments that have no original size, that also sets the display size
-		if (CGSizeEqualToSize(oneAttachment.originalSize, CGSizeZero))
-		{
-			oneAttachment.originalSize = imageSize;
-			
-			didUpdate = YES;
-		}
-	}
-	
-	if (didUpdate)
-	{
-		// layout might have changed due to image sizes
-		[contentAttributedView relayoutText];
-	}
+    NSString *commonCss = [XXShareTemplateBuilder buildCommonCSSTemplateWithBundleFormatteFile:XXCommonTextTemplateCSS withShareStyle:[XXShareStyle chatStyle]];
+    NSString *htmlString = [XXShareTemplateBuilder buildCommonTextContentWithCSSTemplate:commonCss withConentText:contentText];
+    
+    NSAttributedString *attributedString = [[NSAttributedString alloc]initWithHTMLData:[htmlString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+    
+    return attributedString;
 }
 
 #pragma mark - Interface
-- (void)setAttributedText:(NSAttributedString *)attributedText
++ (NSAttributedString*)formatteCommonTextToAttributedText:(NSString *)contentText isFromSelf:(BOOL)isFromSelf
 {
-    [contentAttributedView setAttributedString:attributedText];
+    XXShareStyle *chatStyle = [XXShareStyle chatStyle];
+    if (isFromSelf) {
+        chatStyle.contentTextAlign = XXTextAlignRight;
+    }
+    NSString *commonCss = [XXShareTemplateBuilder buildCommonCSSTemplateWithBundleFormatteFile:XXCommonTextTemplateCSS withShareStyle:chatStyle];
+    NSString *htmlString = [XXShareTemplateBuilder buildCommonTextContentWithCSSTemplate:commonCss withConentText:contentText];
+    
+    NSAttributedString *attributedString = [[NSAttributedString alloc]initWithHTMLData:[htmlString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+    
+    return attributedString;
+}
+
++ (NSAttributedString*)formatteTextToAttributedText:(NSString *)contentText withHtmlTemplateFile:(NSString *)htmlTemplate withCSSTemplate:(NSString *)cssTemplate withShareStyle:(XXShareStyle *)aStyle
+{
+    NSString *css = [XXShareTemplateBuilder buildCommonCSSTemplateWithBundleFormatteFile:cssTemplate withShareStyle:aStyle];
+    NSString *htmlString = [XXShareTemplateBuilder buildHtmlContentWithCSSTemplate:css withHtmlTemplateFile:htmlTemplate withConentText:contentText];
+    
+    NSAttributedString *attributedString = [[NSAttributedString alloc]initWithHTMLData:[htmlString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+    
+    return attributedString;
 }
 
 - (void)setText:(NSString *)text
 {
+    self.attributedString = [XXBaseTextView formatteCommonTextToAttributedText:text];
+}
+
+- (void)setText:(NSString *)text withShareStyle:(XXShareStyle *)aStyle
+{
+    NSString *commonCss = [XXShareTemplateBuilder buildCommonCSSTemplateWithBundleFormatteFile:XXCommonTextTemplateCSS withShareStyle:aStyle];
+    NSString *htmlString = [XXShareTemplateBuilder buildCommonTextContentWithCSSTemplate:commonCss withConentText:text];
     
+    NSAttributedString *attridString = [[NSAttributedString alloc]initWithHTMLData:[htmlString dataUsingEncoding:NSUTF8StringEncoding] documentAttributes:nil];
+    
+    self.attributedString = attridString;
 }
 
 + (CGFloat)heightForAttributedText:(NSAttributedString *)attributedText forWidth:(CGFloat)width
 {
-    DTCoreTextLayouter *layouter = [[DTCoreTextLayouter alloc] initWithAttributedString:attributedText];
+    DTAttributedTextContentView *testView = [[DTAttributedTextContentView alloc]init];
+    [testView setAttributedString:attributedText];
     
-    CGRect maxRect = CGRectMake(0,0, width, CGFLOAT_HEIGHT_UNKNOWN);
-    NSRange entireString = NSMakeRange(0, [attributedText length]);
-    DTCoreTextLayoutFrame *layoutFrame = [layouter layoutFrameWithRect:maxRect range:entireString];
+    CGSize contentSize = [testView suggestedFrameSizeToFitEntireStringConstraintedToWidth:width];
     
-    CGSize sizeNeeded = [layoutFrame frame].size;
-    
-    return sizeNeeded.height;
+    return contentSize.height;
 }
-
-+ (CGFloat)widthForAttributedText:(NSAttributedString *)attributedText forHeight:(CGFloat)height
++ (CGSize)sizeForAttributedText:(NSAttributedString *)attributedText forWidth:(CGFloat)width
 {
-    DTCoreTextLayouter *layouter = [[DTCoreTextLayouter alloc] initWithAttributedString:attributedText];
+    DTAttributedTextContentView *testView = [[DTAttributedTextContentView alloc]init];
+    [testView setAttributedString:attributedText];
     
-    CGRect maxRect = CGRectMake(0,0, CGFLOAT_WIDTH_UNKNOWN, height);
-    NSRange entireString = NSMakeRange(0, [attributedText length]);
-    DTCoreTextLayoutFrame *layoutFrame = [layouter layoutFrameWithRect:maxRect range:entireString];
+    CGSize contentSize = [testView suggestedFrameSizeToFitEntireStringConstraintedToWidth:width];
     
-    CGSize sizeNeeded = [layoutFrame frame].size;
-    
-    return sizeNeeded.width;
+    return contentSize;
 }
 
 #pragma mark - switch emoji text to image tag
@@ -163,13 +120,11 @@ NSString *const XXEmojiTagFormate = @"[]";
     if (!source) {
         return nil;
     }
-    
     NSString *leftEmojiTag = [XXEmojiTagFormate substringWithRange:NSMakeRange(0,1)];
     NSString *rightEmojiTag = [XXEmojiTagFormate substringWithRange:NSMakeRange(1,1)];
     NSString *leftImageTag = [XXEmojiCSSFormate substringWithRange:NSMakeRange(0,1)];
     
     NSMutableString *resultString = [NSMutableString string];
-    
     NSArray *arrayByLeftTag = [source componentsSeparatedByString:leftEmojiTag];
     
     if (arrayByLeftTag.count > 1) {

@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface XXImageCenter : NSObject
-
+{
+    NSOperationQueue *_saveQueue;
+}
++ (XXImageCenter*)shareCenter;
+- (NSString*)saveChatImageForLocal:(UIImage*)aImage;
+- (UIImage*)getChatLocalImage:(NSString*)cachePath;
 @end

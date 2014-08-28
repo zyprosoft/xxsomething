@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXSchoolModel.h"
 
-@interface XXSchoolChooseCell : UITableViewCell
+@interface XXSchoolChooseCell : XXBaseCell
+{
+    UIImageView *_chooseImageView;
+}
+@property (nonatomic,strong)UIImageView *chooseImageView;
 
+- (void)setContentModel:(XXSchoolModel*)contentModel;
+- (void)setTitle:(NSString*)title;
+- (void)setChooseState:(BOOL)state;
 @end

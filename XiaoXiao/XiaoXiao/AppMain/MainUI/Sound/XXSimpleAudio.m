@@ -7,9 +7,12 @@
 //
 
 #import "XXSimpleAudio.h"
+#import "BRYSoundEffectPlayer.h"
 
 NSString *const XXRefreshAudioEffect = @"refreshaudio.amr";
 NSString *const XXTeaseSendAudioEffect = @"";
+NSString *const XXPullShootEffect = @"pull_shoot.m4r";
+NSString *const XXShootNowEffect = @"shoot_now.m4r";
 
 @implementation XXSimpleAudio
 
@@ -26,18 +29,37 @@ NSString *const XXTeaseSendAudioEffect = @"";
 }
 + (void)playRefreshEffect
 {
-    if ([XXSimpleAudio bundleAudioEffectWithName:XXRefreshAudioEffect]) {
-        [MCSoundBoard addAudioAtPath:[XXSimpleAudio bundleAudioEffectWithName:XXRefreshAudioEffect] forKey:XXRefreshAudioEffect];
-        [MCSoundBoard playSoundForKey:XXRefreshAudioEffect];
-    }else{
-        DDLogWarn(@"audio can't be find!");
-    }
-  
+    [[BRYSoundEffectPlayer sharedInstance]playSound:[XXSimpleAudio bundleAudioEffectWithName:@"msg_send.m4r"]];
 }
 
 + (void)playTeaseSendEffect
 {
     
+}
+
++ (void)playPullShootEffect
+{
+    [[BRYSoundEffectPlayer sharedInstance]playSound:[XXSimpleAudio bundleAudioEffectWithName:XXPullShootEffect]];
+}
++ (void)playShootNowEffect
+{
+    [[BRYSoundEffectPlayer sharedInstance]playSound:[XXSimpleAudio bundleAudioEffectWithName:XXShootNowEffect]];
+}
+
++ (void)playMsgSendEffect
+{
+    [[BRYSoundEffectPlayer sharedInstance]playSound:[XXSimpleAudio bundleAudioEffectWithName:@"msg_send.m4r"]];
+}
+
++ (void)playShootFindEffect
+{
+    [[BRYSoundEffectPlayer sharedInstance]playSound:[XXSimpleAudio bundleAudioEffectWithName:@"shoot_find.m4r"]];
+
+}
+
++ (void)playShootNoneEffect
+{
+    [[BRYSoundEffectPlayer sharedInstance]playSound:[XXSimpleAudio bundleAudioEffectWithName:@"shoot_none.m4r"]];
 }
 
 

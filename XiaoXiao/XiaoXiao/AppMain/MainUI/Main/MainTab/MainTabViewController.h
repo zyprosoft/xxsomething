@@ -8,9 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "XXCustomTabBar.h"
+#import "SquareGuideViewController.h"
+#import "MessageGuideViewController.h"
+#import "MyHomeGuideViewController.h"
+#import "LonelyShootViewController.h"
 
 @interface MainTabViewController : UITabBarController
 {
     XXCustomTabBar *customTabBar;
 }
+
+- (void)setTabBarHidden:(BOOL)state;
+
+- (void)updateMsgAction;
+
+- (void)updateMainTabBarForNewMessage;
+- (void)showMsgRemind;
+
+- (void)shouldSelectAtIndex:(NSInteger)index;
+
+- (void)userHasFinishUpdateInfo;
+
 @end

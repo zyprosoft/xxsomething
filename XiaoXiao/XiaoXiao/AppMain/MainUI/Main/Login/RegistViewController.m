@@ -27,6 +27,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    CGFloat totalWidth = self.view.frame.size.width;
+    
+    self.formView = [[XXFormView alloc]initWithFrame:CGRectMake(20,30,totalWidth-40,110)];
+    self.formView.accountTextField.placeholder = @"请输入邮箱";
+    [self.view addSubview:self.formView];
+    
 }
 
 - (void)didReceiveMemoryWarning

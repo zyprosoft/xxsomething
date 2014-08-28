@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>54C3A746-9B8A-414B-9CA9-C2794EE8B02F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>XiaoXiao</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6264AD7F-BCD1-4CF2-96DB-6F04AD03CCC5</key>
+		<string>https://github.com/ZYMobCMS/xxsomething.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>XiaoXiao/XiaoXiao.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6264AD7F-BCD1-4CF2-96DB-6F04AD03CCC5</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ZYMobCMS/xxsomething.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6264AD7F-BCD1-4CF2-96DB-6F04AD03CCC5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6264AD7F-BCD1-4CF2-96DB-6F04AD03CCC5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>xxsomething</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -470,9 +470,10 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     if (!path) {
         path = @"";
     }
-
+    
+    
     NSURL *url = [NSURL URLWithString:path relativeToURL:self.baseURL];
-    DDLogVerbose(@"url -->%@",url);
+    DDLogVerbose(@"start request url -->%@",url);
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:method];
     [request setAllHTTPHeaderFields:self.defaultHeaders];
@@ -674,8 +675,21 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self enqueueHTTPRequestOperation:operation];
 }
+//cancle request with flag
+- (void)cancelRequestWithRequestFlag:(NSString *)flag
+{
+    [self.operationQueue.operations enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSOperation *eachOperation = (NSOperation*)obj;
+        if ([eachOperation hash]==[flag intValue]) {
+            if (eachOperation.isCancelled==NO) {
+                [eachOperation cancel];
+                *stop = YES;
+            }
+        }
+    }];
+}
 
-- (void)postPath:(NSString *)path
+- (NSString*)postPath:(NSString *)path
       parameters:(NSDictionary *)parameters
          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
@@ -683,6 +697,8 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
 	NSURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:parameters];
 	AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request success:success failure:failure];
     [self enqueueHTTPRequestOperation:operation];
+    NSString *operationHashTag = [NSString stringWithFormat:@"%d",[operation hash]];
+    return operationHashTag;
 }
 
 - (void)putPath:(NSString *)path
@@ -947,7 +963,6 @@ NSTimeInterval const kAFUploadStream3GSuggestedDelay = 0.2;
     NSMutableDictionary *mutableHeaders = [NSMutableDictionary dictionary];
     [mutableHeaders setValue:[NSString stringWithFormat:@"form-data; name=\"%@\"; filename=\"%@\"", name, fileName] forKey:@"Content-Disposition"];
     [mutableHeaders setValue:mimeType forKey:@"Content-Type"];
-
     [self appendPartWithHeaders:mutableHeaders body:data];
 }
 
@@ -1394,5 +1409,7 @@ typedef enum {
 
     return bodyPart;
 }
+
+
 
 @end

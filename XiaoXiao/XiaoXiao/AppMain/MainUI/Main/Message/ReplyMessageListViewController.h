@@ -8,6 +8,6 @@
 
 #import "XXMessageListViewController.h"
 
-@interface ReplyMessageListViewController : XXMessageListViewController
+@interface ReplyMessageListViewController : XXMessageListViewController<XXMessageBaseCellDelegate,UIAlertViewDelegate>
 
 @end

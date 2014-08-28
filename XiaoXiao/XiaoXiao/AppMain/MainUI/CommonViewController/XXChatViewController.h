@@ -7,7 +7,33 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXBaseViewController.h"
+#import "XXChatToolBar.h"
+#import "XXUserModel.h"
+#import "XXConditionModel.h"
+#import "XXChatCell.h"
+#import "XXAudioManager.h"
 
-@interface XXChatViewController : UIViewController
+/*
+ *基础聊天视图列表
+ */
+
+@interface XXChatViewController : XXBaseViewController<UITableViewDelegate,UITableViewDataSource,XXChatCellDelegate,XXAudioManagerDelegate,XXChatToolBarDelegate>
+{
+    UITableView *_messageListTable;
+    NSMutableArray *_messagesArray;
+    NSMutableArray *_rowHeightArray;
+    
+    XXChatToolBar *_chatToolBar;
+    UIControl        *_whiteBoard;
+    
+    XXUserModel   *_chatUser;
+    NSString      *_isFirstChat;
+    XXConditionModel *_conversationCondition;
+    
+    NSIndexPath   *_playingAudioPath;
+}
+
+- (id)initWithChatUser:(XXUserModel*)chatUser;
 
 @end

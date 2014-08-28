@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XXLeftNavItem.h"
 
 @interface LatenceGuideViewController : UIViewController
-
+{
+    XXLeftNavItem *currentSchool;
+}
 @end

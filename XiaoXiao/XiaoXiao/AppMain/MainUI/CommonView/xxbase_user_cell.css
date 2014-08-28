@@ -1,0 +1,59 @@
+
+img.emoji{
+    width:%dpx;
+    height:%dpx;
+    border:0;
+}
+img.icon{
+    -webkit-margin-before:1em;
+    width:12px;
+    height:12px;
+    border:0;
+}
+img.sextag{
+    width:%dpx;
+    height:%dpx;
+    border:0;
+}
+
+span.username{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
+}
+span.college{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
+}
+span.starscore{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
+}
+span.score{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
+}
+
+span.profile{
+    line-height:%f;
+    font-size:%dpx;
+    color:%@;
+    text-align:%@;
+    font-weight:%@;
+    font-family:%@;
+}
